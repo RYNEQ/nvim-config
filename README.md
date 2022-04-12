@@ -24,7 +24,7 @@ fall-back for $VIM: "/usr/share/nvim"
 Run :checkhealth for more info
 ```
 ### Clang
-Install `clang` and `clangd` ( See [docs](https://clangd.llvm.org/installation.html) ):
+Install `clang` and `clangd` ( See [docs](https://clangd.llvm.org/installation.html) ):  
 Note: change `14` with your desired version of `clang`
 ```bash
 $ sudo apt install clang-14 clangd-14
