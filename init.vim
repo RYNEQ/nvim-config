@@ -1,13 +1,16 @@
+
 let mapleader=" "
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set hidden
 
-"set clipboard=unnamedplus
+set clipboard=unnamedplus
 "set cursorline
 set number
 set relativenumber
+set ignorecase
+set smartcase
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -19,8 +22,8 @@ luafile ~/.config/nvim/lua/pluginsconfig.lua
 set rtp+=/bin/
 noremap <leader>fz :FZF<cr>
 
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
+"autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\n\+\%$//e
 
 
 map <A-h> <C-w>h
