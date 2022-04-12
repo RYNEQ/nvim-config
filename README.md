@@ -57,7 +57,7 @@ Use any plugin manager you like, I used [packer](https://github.com/wbthomason/p
  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
  ```
  ### Copy Configurations
- Copy repo into `/home/ryn/.config/nvim/` (THIS DELETES OLD `neovim` CONFIGS:
+ Copy repo into `/home/ryn/.config/nvim/` (THIS DELETES OLD `neovim` CONFIGURATIONS):
  ```bash
  $ rm -rf ~/.config/nvim/
  $ rm -rf ~/.local/share/nvim/
