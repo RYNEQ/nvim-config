@@ -46,7 +46,7 @@ $ npm i -g pyright
 ```
 
 ### Other language servers
-for other languages refer to `lspconfig` documentation:
+for other languages refer to `lspconfig` documentation:  
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
 ## Configurations
