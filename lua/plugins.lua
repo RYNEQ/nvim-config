@@ -1,8 +1,5 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 
 return require('packer').startup(function()
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   
@@ -29,6 +26,11 @@ return require('packer').startup(function()
   use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-web-devicons' 
   use 'akinsho/bufferline.nvim'
+  use 'github/copilot.vim'
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use 'mfussenegger/nvim-dap-python'
+  use 'nvim-telescope/telescope-dap.nvim'
 end)
 
 

@@ -18,6 +18,7 @@ luafile ~/.config/nvim/lua/plugins.lua
 luafile ~/.config/nvim/lua/lsp.lua
 luafile ~/.config/nvim/lua/nvim-cmp.lua
 luafile ~/.config/nvim/lua/pluginsconfig.lua
+luafile ~/.config/nvim/lua/dap-configs.lua
 
 set rtp+=/bin/
 noremap <leader>fz :FZF<cr>
@@ -86,3 +87,30 @@ nmap <leader>bl :buffers<cr>:b<space>
 set guifont=Hack\ 12
 set encoding=UTF-8
 let g:airline_powerline_fonts = 1
+
+
+nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
+nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
+nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>
+nnoremap <silent> <F12> :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
+nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
+
+
+
+nnoremap <leader>dcc :lua require"telescope".extensions.dap.commands{}<CR>
+nnoremap <leader>dco :lua require"telescope".extensions.dap.configurations{}<CR>
+nnoremap <leader>dlb :lua require"telescope".extensions.dap.list_breakpoints{}<CR>
+nnoremap <leader>dv  :lua require"telescope".extensions.dap.variables{}<CR>
+nnoremap <leader>df  :lua require"telescope".extensions.dap.frames{}<CR>
+
+nnoremap <leader>duh :lua require"dap.ui.widgets".hover()<CR>
+nnoremap <leader>duf :lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>
+
+"nnoremap <leader>dsc :lua require"dap.ui.variables".scopes()<CR>
+"nnoremap <leader>dhh :lua require"dap.ui.variables".hover()<CR>')
+"vnoremap <leader>dhv :lua require"dap.ui.variables".visual_hover()<CR>')
+
