@@ -90,6 +90,7 @@ let g:airline_powerline_fonts = 1
 
 
 nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
+nnoremap <silent> <S-F5> :lua require'dap'.close()<CR>
 nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
 nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>
 nnoremap <silent> <F12> :lua require'dap'.step_out()<CR>
@@ -113,4 +114,8 @@ nnoremap <leader>duf :lua local widgets=require'dap.ui.widgets';widgets.centered
 "nnoremap <leader>dsc :lua require"dap.ui.variables".scopes()<CR>
 "nnoremap <leader>dhh :lua require"dap.ui.variables".hover()<CR>')
 "vnoremap <leader>dhv :lua require"dap.ui.variables".visual_hover()<CR>')
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 
