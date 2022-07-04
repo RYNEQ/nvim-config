@@ -31,6 +31,11 @@ return require('packer').startup(function()
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use 'mfussenegger/nvim-dap-python'
   use 'nvim-telescope/telescope-dap.nvim'
+  use 'simrat39/rust-tools.nvim'
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
 
 

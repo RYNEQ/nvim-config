@@ -3,6 +3,11 @@ require'hop'.setup()
 vim.api.nvim_set_keymap('n', '<leader>jj', "<cmd>lua require'hop'.hint_words()<cr>", {})
 vim.api.nvim_set_keymap('n', '<leader>jc', "<cmd>lua require'hop'.hint_char1()<cr>", { noremap=true, silent=true })
 
+
+require("toggleterm").setup{
+  shade_terminals = true,
+}
+
 -- {{ toggleterm
 -- keymappings within toggleterm buffer
 function _G.set_terminal_keymaps()

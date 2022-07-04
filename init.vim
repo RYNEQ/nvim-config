@@ -5,7 +5,7 @@ set shiftwidth=4
 set expandtab
 set hidden
 
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 "set cursorline
 set number
 set relativenumber
@@ -19,6 +19,7 @@ luafile ~/.config/nvim/lua/lsp.lua
 luafile ~/.config/nvim/lua/nvim-cmp.lua
 luafile ~/.config/nvim/lua/pluginsconfig.lua
 luafile ~/.config/nvim/lua/dap-configs.lua
+luafile ~/.config/nvim/lua/markdown_config.lua
 
 set rtp+=/bin/
 noremap <leader>fz :FZF<cr>
@@ -74,6 +75,8 @@ map <leader>m :w! \| !gcc "<c-r>%"
 autocmd filetype python nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>
 autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && '.shellescape(expand('%:p:r'))<CR>
 autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && '.shellescape(expand('%:p:r'))<CR>
+autocmd filetype c nnoremap <c-F4> :w <bar> exec '!gcc -g '.shellescape('%').' -o '.shellescape('%:r').' && '.shellescape(expand('%:p:r'))<CR>
+autocmd filetype cpp nnoremap <c-F4> :w <bar> exec '!g++ -g '.shellescape('%').' -o '.shellescape('%:r').' && '.shellescape(expand('%:p:r'))<CR>
 nnoremap <leader>bb <cmd>BufferLinePick<cr>
 
 nnoremap <silent> gb :BufferLinePick<CR>
@@ -118,4 +121,37 @@ nnoremap <leader>duf :lua local widgets=require'dap.ui.widgets';widgets.centered
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+" MarkdownPreview
+let g:mkdp_auto_start = 1
+let g:mkdp_auto_close = 1
+let g:mkdp_refresh_slow = 0
+let g:mkdp_command_for_global = 0
+let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_ip = ''
+let g:mkdp_browser = ''
+let g:mkdp_echo_preview_url = 0
+let g:mkdp_browserfunc = ''
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0,
+    \ 'toc': {}
+    \ }
+let g:mkdp_markdown_css = ''
+let g:mkdp_highlight_css = ''
+let g:mkdp_port = ''
+let g:mkdp_page_title = '「${name}」'
+let g:mkdp_filetypes = ['markdown']
+let g:mkdp_theme = 'dark'
+nnoremap <C-s> <Plug>MarkdownPreview
+nnoremap <M-s> <Plug>MarkdownPreviewStop
+nnoremap <C-p> <Plug>MarkdownPreviewToggle
 
